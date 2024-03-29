@@ -1,0 +1,21 @@
+{
+    "name": "veronika1801/pack",
+    "description": "pack",
+    "type": "library",
+    "license": "mit",
+    "autoload": {
+        "psr-4": {
+            "Middlewares\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "veronika1801",
+            "email": "veronika1801@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+      "php": "^7.4 | ^8.0"
+    }
+}
