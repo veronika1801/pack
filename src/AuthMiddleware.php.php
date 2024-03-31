@@ -2,33 +2,16 @@
 
 namespace Middlewares;
 
-interface AuthInterface
-{
-    public function check();
-}
-
-class Auth implements AuthInterface
-{
-    public function check()
-    {
-        // Возвращаем результат проверки авторизации
-    }
-}
+use Src\Auth\Auth;
+use Src\Request;
 
 class AuthMiddleware
 {
-    private $auth;
-
-    public function __construct(AuthInterface $auth)
-    {
-        $this->auth = $auth;
-    }
-
-    public function handle($request)
-    {
-        // Если пользователь не авторизован, то редирект на страницу входа
-        if (!$this->auth->check()) {
-            app()->route->redirect('/login');
-        }
-    }
+   public function handle(Request $request)
+   {
+       //Если пользователь не авторизован, то редирект на страницу входа
+       if (!Auth::check()) {
+           app()->route->redirect('/login');
+       }
+   }
 }
