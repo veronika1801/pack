@@ -1,6 +1,6 @@
 <?php
 
-namespace middlewares;
+namespace Middlewares;
 
 use exception;
 
